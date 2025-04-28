@@ -37,6 +37,10 @@ jobs:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v2
+      - uses: julia-actions/add-julia-registry@v2
+        with:
+          key: ${{ secrets.REGISTRY_KEY }}
+          registry: dannys4/dannys4Registry
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
   docs:
