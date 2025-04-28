@@ -12,12 +12,12 @@ Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 UnivariateApprox = "549aa1d2-f639-4cc7-b8e4-a7f233081321"
 
 [compat]
-ArgCheck = "2.5.0"
-LinearAlgebra = "1.11.0"
-MultiIndexing = "1.2.0"
+ArgCheck = "^2.5"
+LinearAlgebra = "^1.10"
+MultiIndexing = "^1.2"
 MultivariateExpansions = "1.1.6"
-Random = "1.11.0"
-UnivariateApprox = "0.4.0"
+Random = "^1.10"
+UnivariateApprox = "^0.4"
 julia = "1.10"
 
 [extras]
