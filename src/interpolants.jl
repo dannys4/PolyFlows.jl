@@ -26,11 +26,12 @@ function LinearInterpolant(alpha, beta, alpha_deriv, beta_deriv, tol=0.)
 end
 
 """See [`LinearInterpolant`](@ref). α = t, β = 1-t"""
-McCannInterpolant() = LinearInterpolant(t->t, t->1-t, Returns(1.), Returns(-1.), t->(t+1e-2)/(1-t+1e-3), t->1/(t+1e-2))
+McCannInterpolant() = LinearInterpolant(t->t, t->1-t, Returns(1.), Returns(-1.), t->(t+1e-2)/(1-t+1e-2), t->1/(t+1e-2))
 """See [`LinearInterpolant`](@ref). α = √t, β = 1-√t"""
 SqrtInterpolant(tol=1e-3) = LinearInterpolant(t->sqrt(t), t->1-sqrt(t), t->1/(2sqrt(t)+tol), t->-1/(2sqrt(t)+tol), tol)
 """See [`LinearInterpolant`](@ref). α = t², β = 1-t²"""
 SquareInterpolant(tol=1e-3) = LinearInterpolant(t->t*t, t->1-t*t, t->2t, t->-2t, tol)
+
 """See [`LinearInterpolant`](@ref). α = sin(πt/2), β = cos(πt/2)"""
 function TrigInterpolant(tol=1e-3)
     alpha = t->sin(pi*t/2)
